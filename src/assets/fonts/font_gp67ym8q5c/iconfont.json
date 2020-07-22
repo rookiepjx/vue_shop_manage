@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "688096",
+      "name": "商品 购物袋2",
+      "font_class": "shangpingouwudai2",
+      "unicode": "e789",
+      "unicode_decimal": 59273
+    },
+    {
+      "icon_id": "886915",
+      "name": "用户好友",
+      "font_class": "yonghuhaoyou",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "1313492",
+      "name": "BBD盒子",
+      "font_class": "BBDhezi",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "5206117",
+      "name": "订单",
+      "font_class": "icon",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "8802624",
+      "name": "数据",
+      "font_class": "shuju",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    }
+  ]
+}

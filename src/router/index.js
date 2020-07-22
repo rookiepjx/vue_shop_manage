@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -14,14 +14,25 @@ const routes = [
   },
   {
     path: "/home",
-    component: () => import("../components/Home.vue")
+    component: () => import("../components/Home.vue"),
+    redirect: "/welcome",
+    children: [
+      {
+        path: "/welcome",
+        component: () => import("../components/Welcome.vue")
+      },
+      {
+        path: "/users",
+        component: () => import("../components/user/Users.vue")
+      }
+    ]
   }
 ];
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
 router.beforeEach((to, from, next) => {
   // 如果访问登录页面，放行
@@ -38,4 +49,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-export default router
+export default router;
