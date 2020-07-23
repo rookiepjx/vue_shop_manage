@@ -3,6 +3,8 @@ html,body,#app{
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
+  min-width: 1366px;
 }
 /* 重置样式 */
 .el-breadcrumb{
@@ -16,6 +18,7 @@ html,body,#app{
   margin-top: 15px;
   font-size: 12px;
   text-align: center;
+  margin-bottom: 50px;
 }
 .el-pagination{
   margin-top: 20px;
