@@ -7,6 +7,7 @@ import "./assets/css/global.css"
 import "./assets/fonts/font_gp67ym8q5c/iconfont.css"
 import axios from "axios"
 import Router from "vue-router"
+import TreeTable from "vue-table-with-tree-grid"
 
 // 重写push方法
 const routerPush = Router.prototype.push;
@@ -24,6 +25,9 @@ Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+
+// 注册为全局组件
+Vue.component('tree-table',TreeTable)
 
 
 new Vue({

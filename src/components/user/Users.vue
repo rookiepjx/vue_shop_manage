@@ -271,7 +271,7 @@ export default {
         // 如果更新失败，将页面上的状态还原
         userinfo.mg_state = !userinfo.mg_state;
         return this.$message({
-          messgae: "更新用户状态失败",
+          message: "更新用户状态失败",
           type: "error",
           center: "true",
         });
@@ -293,7 +293,7 @@ export default {
         const { data: res } = await this.$http.post("users", this.addForm);
         if (res.meta.status !== 201) {
           this.$message({
-            messgae: "添加用户失败",
+            message: "添加用户失败",
             type: "error",
             center: "true",
           });
@@ -312,7 +312,7 @@ export default {
       const { data: res } = await this.$http.get("users/" + id);
       if (res.meta.status !== 200) {
         return this.$message({
-          messgae: "查询用户信息失败",
+          message: "查询用户信息失败",
           type: "error",
           center: "true",
         });
@@ -383,9 +383,9 @@ export default {
       const { data: res } = await this.$http.get("roles");
       if (res.meta.status !== 200) {
         return this.$message({
-          type: "erroe",
+          type: "error",
           message: "请求角色列表失败",
-          certer: "true",
+          center: "true",
         });
       }
       this.rolesList = res.data;
@@ -404,11 +404,12 @@ export default {
           center: "true",
         });
       }
-      const {
-        data: res,
-      } = await this.$http.put(`users/${this.userInfo.id}/role`, {
-        rid: this.selectedRoleId,
-      });
+      const { data: res } = await this.$http.put(
+        `users/${this.userInfo.id}/role`,
+        {
+          rid: this.selectedRoleId,
+        }
+      );
       if (res.meta.status !== 200) {
         return this.$message({
           type: "error",
