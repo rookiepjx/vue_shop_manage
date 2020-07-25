@@ -89,11 +89,6 @@ export default {
           center: "true",
         });
       }
-      this.$message({
-        message: "获取商品列表成功",
-        type: "success",
-        center: "true",
-      });
       this.goodsList = res.data.goods;
       this.total = res.data.total;
     },
