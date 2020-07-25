@@ -23,6 +23,7 @@ html,body,#app{
 .el-pagination{
   margin-top: 20px;
 }
-.el-cascader{
+.cascader{
   width: 100%;
 }
+
