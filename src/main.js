@@ -9,10 +9,10 @@ import axios from "axios";
 import Router from "vue-router";
 import TreeTable from "vue-table-with-tree-grid";
 // vue-quill-editor富文本编辑器
-import VueQuillEditor from 'vue-quill-editor'
-import 'quill/dist/quill.core.css' // import styles
-import 'quill/dist/quill.snow.css' // for snow theme
-import 'quill/dist/quill.bubble.css' // for bubble theme
+import VueQuillEditor from "vue-quill-editor";
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css"; // for snow theme
+import "quill/dist/quill.bubble.css"; // for bubble theme
 
 // 重写push方法
 const routerPush = Router.prototype.push;
@@ -41,15 +41,15 @@ Vue.use(VueQuillEditor);
 Vue.filter("dateFormat", function(date) {
   const dt = new Date(date);
   const year = dt.getFullYear();
-  const month = (dt.getMonth() + 1 + "").padStart(2, '0');
-  const day = (dt.getDate() + "").padStart(2, '0');
-  const hour = (dt.getHours() + "").padStart(2, '0');
-  const minutes = (dt.getMinutes() + "").padStart(2, '0');
-  const second = (dt.getSeconds() + "").padStart(2, '0');
+  const month = (dt.getMonth() + 1 + "").padStart(2, "0");
+  const day = (dt.getDate() + "").padStart(2, "0");
+  const hour = (dt.getHours() + "").padStart(2, "0");
+  const minutes = (dt.getMinutes() + "").padStart(2, "0");
+  const second = (dt.getSeconds() + "").padStart(2, "0");
   return `${year}-${month}-${day} ${hour}:${minutes}:${second}`;
 });
 
-// 
+//
 
 new Vue({
   router,
