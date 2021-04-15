@@ -71,7 +71,6 @@ export default {
               type: "success",
               offset: 300
             });
-            console.log(res);
             window.sessionStorage.setItem("token",res.data.token)
             this.$router.push('/home')
           }

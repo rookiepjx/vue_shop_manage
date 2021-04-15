@@ -16,8 +16,8 @@
 
 <script>
 // 1.导入 Echarts
-import echarts from "echarts";
-import _ from "lodash"
+// import echarts from "echarts";
+// import _ from "lodash"
 export default {
   data() {
     return {
@@ -55,7 +55,7 @@ export default {
     };
   },
   created() {
-    this.get
+    
   },
   async mounted() {
     // 2.基于准备好的dom，初始化echarts实例
@@ -91,6 +91,7 @@ export default {
     }
     // 将后台请求的结果和配置项合并成一个对象
     const result = _.merge(res.data,this.options)
+    console.log(result)
     // 4.使用刚指定的配置项和数据显示图表
     myChart.setOption(result);
   },

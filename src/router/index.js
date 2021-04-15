@@ -1,5 +1,6 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+// import Vue from "vue";
+// import VueRouter from "vue-router";
+import nprogress from "nprogress";
 
 Vue.use(VueRouter);
 
@@ -67,15 +68,21 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  // 开始进度条动画
+  nprogress.start();
+
   // 如果访问登录页面，放行
   if (to.path === "/login") {
+    nprogress.done();
     return next();
   } else {
     // 如果不是访问登录，判断有无token
     const token = window.sessionStorage.getItem("token");
     if (!token) {
+      nprogress.done();
       return next("/login");
     } else {
+      nprogress.done();
       next();
     }
   }

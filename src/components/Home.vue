@@ -43,7 +43,7 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <!-- mian区域路由占位符 -->
+        <!-- main区域路由占位符 -->
         <router-view/>
       </el-main>
     </el-container>

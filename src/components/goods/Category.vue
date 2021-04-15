@@ -35,12 +35,12 @@
         </template>
         <!-- 排序模板 -->
         <template slot="order" slot-scope="scope">
-          <el-tag type="primary" v-if="scope.row.cat_level === 1">一级</el-tag>
-          <el-tag type="success" v-if="scope.row.cat_level === 2">二级</el-tag>
+          <el-tag type="primary" v-if="scope.row.cat_level == 1">一级</el-tag>
+          <el-tag type="success" v-if="scope.row.cat_level == 2">二级</el-tag>
           <el-tag type="warning" v-else>三级</el-tag>
         </template>
         <!-- 操作模板 -->
-        <template slot="order" slot-scope="scope">
+        <template slot="opt" slot-scope="scope">
           <el-button size="mini" type="primary" @click="showEditDialog(scope.row.cat_id)">
             <i class="el-icon-edit"></i>编辑
           </el-button>
@@ -183,7 +183,7 @@ export default {
         label: "cat_name",
         children: "children",
       },
-      // 选中的腹肌分类id数组
+      // 选中的父级分类id数组
       selectedKeys: [],
       // 修改分类对话框显示/隐藏
       editCateDialogVisible: false,
@@ -217,6 +217,7 @@ export default {
       }
       this.total = res.data.total;
       this.cateList = res.data.result;
+      console.log(res.data.result)
     },
     // 监听 pageSize 改变
     handleSizeChange(newSize) {
@@ -246,6 +247,7 @@ export default {
         });
       }
       this.parentCateList = res.data;
+
     },
     // 选择项变化触发
     parentCateChange() {
